@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.blogDoAgi</groupId>
+	<artifactId>testeTecnico-automation-scripts</artifactId>
+	<version>0.0.1</version>
+	<name>Project</name>
+	<url>project url</url>
+
+	<properties>
+		<tested.project.version>0.1</tested.project.version>
+		<run.suite>**TestSuite.java</run.suite>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<!-- Dependencies -->
+		<selenium.version>3.141.59</selenium.version>
+		<selenium.chrome.version>3.141.59</selenium.chrome.version>
+		<hamcrest-all.version>1.3</hamcrest-all.version>
+		<junit.version>4.12</junit.version>
+		<javadoc.version>2.10.4</javadoc.version>
+		<jackson.version>2.8.9</jackson.version>
+		<xmlrpc-common.version>3.1</xmlrpc-common.version>
+		<xmlrpc-client.version>3.1</xmlrpc-client.version>
+		<ws-commons-util.version>1.0.2</ws-commons-util.version>
+		<testlink-api-client.version>2.0</testlink-api-client.version>
+		<extentreports.version>3.1.2</extentreports.version>
+		<!-- Plugins -->
+		<maven-surefire-plugin.version>2.20</maven-surefire-plugin.version>
+		<maven-compiler-plugin.version>3.6.1</maven-compiler-plugin.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-surefire-plugin</artifactId>
+			<version>${maven-surefire-plugin.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>${selenium.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-chrome-driver</artifactId>
+			<version>${selenium.chrome.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest-all</artifactId>
+			<version>${hamcrest-all.version}</version>
+		</dependency>
+		
+		<!-- EXTENT DEPENDECIES -->
+		<dependency>
+    		<groupId>com.aventstack</groupId>
+    		<artifactId>extentreports</artifactId>
+    		<version>${extentreports.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.xmlrpc</groupId>
+			<artifactId>xmlrpc-common</artifactId>
+			<version>${xmlrpc-common.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.xmlrpc</groupId>
+			<artifactId>xmlrpc-client</artifactId>
+			<version>${xmlrpc-client.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.ws.commons.util</groupId>
+			<artifactId>ws-commons-util</artifactId>
+			<version>${ws-commons-util.version}</version>
+		</dependency>
+		<!-- EXCEL API DEPENDENCY -->
+		<dependency>
+			<groupId>net.sourceforge.jexcelapi</groupId>
+			<artifactId>jxl</artifactId>
+			<version>2.6.12</version>
+		</dependency>
+		<dependency>
+		    <groupId>fr.inria.gforge.spoon</groupId>
+		    <artifactId>spoon-core</artifactId>
+		    <!-- See rendered release value at http://spoon.gforge.inria.fr/ -->
+		    <version>8.0.0</version>
+		</dependency>
+	</dependencies>
+
+</project>
