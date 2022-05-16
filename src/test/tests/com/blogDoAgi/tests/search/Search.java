@@ -55,7 +55,28 @@ public class Search extends AbstractTestScenary{
 	}
 	
 	@Test
-	public void test_003_invalidSearchWithVeryLargeText() throws Exception {
+	public void test_003_searchWithSpaceFilledField() throws Exception {
+		String searchedText = "    ";
+		
+		BlogDoAgiPage blogDoAgiPage = new BlogDoAgiPage(getDriver());
+		SearchResultPage searchResultPage = new SearchResultPage(getDriver());
+
+		blogDoAgiPage.clicarNaLupa();
+		blogDoAgiPage.preencherCampoDeBusca(searchedText);
+		blogDoAgiPage.clicarEmPesquisar();
+		
+		String headerResult = searchResultPage.obterTextoCabeçalhoDaPesquisa();
+		String textResult = searchResultPage.obterTextoConteudoPesquisa();
+				
+		assertNotEquals(searchResultPage.messageHeaderForInvalidSearch, headerResult);
+		assertNotEquals(searchResultPage.messageTextForInvalidSearch, textResult);
+
+		assertTrue(searchResultPage.validaPesquisa(searchedText, headerResult));
+		assertTrue(searchResultPage.validaPesquisa(searchedText, textResult));
+	}
+	
+	@Test
+	public void test_004_invalidSearchWithVeryLargeText() throws Exception {
 		String searchedText = "testestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestes";
 		
 		BlogDoAgiPage blogDoAgiPage = new BlogDoAgiPage(getDriver());
@@ -73,7 +94,7 @@ public class Search extends AbstractTestScenary{
 	}
 	
 	@Test
-	public void test_004_invalidSearchWithSpecialCharacters() throws Exception {
+	public void test_005_invalidSearchWithSpecialCharacters() throws Exception {
 		String searchedText = "!@#$%";
 		
 		BlogDoAgiPage blogDoAgiPage = new BlogDoAgiPage(getDriver());
